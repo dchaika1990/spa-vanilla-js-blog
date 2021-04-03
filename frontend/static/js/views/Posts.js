@@ -12,6 +12,8 @@ export default class Posts extends AbstractView {
             <p>
                 You are viewing the posts
             </p>
+             <p> <a href="/posts/1" data-link>Post 1</a>.</p>
+             <p> <a href="/posts/2" data-link>Post 2</a>.</p>
 		`;
 	}
 }
