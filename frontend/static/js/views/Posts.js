@@ -7,13 +7,13 @@ export default class Posts extends AbstractView {
 	}
 
 	async getHtml() {
+		const postsList = this.getPosts().map(({id,title}) => {
+			return ` <p> <a href="/posts/${id}" data-link>${title}</a>.</p>`
+		} )
+
 		return `
 			<h1>Posts</h1>
-            <p>
-                You are viewing the posts
-            </p>
-             <p> <a href="/posts/1" data-link>Post 1</a>.</p>
-             <p> <a href="/posts/2" data-link>Post 2</a>.</p>
+             ${postsList.length ? postsList.join('') : `<p>There are no posts</p>`}
 		`;
 	}
 }
